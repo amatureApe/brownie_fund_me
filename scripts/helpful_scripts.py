@@ -6,3 +6,7 @@ def get_account():
         return accounts[0]
     else:
         return accounts.add(config["wallets"]["from_key"])
+
+
+def get_verify_status():
+    return config["networks"][network.show_active()].get("verify")

@@ -19,5 +19,8 @@ networks:
     verify: False
   ganache-local:
     verify: False
+  ftm-main:
+    eth_usd_price_feed: "0x11DdD3d147E5b83D01cee7070027092397d63658"
+    verify: True
 wallets:
   from_key: ${PRIVATE_KEY}
