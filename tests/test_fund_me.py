@@ -9,6 +9,7 @@ def test_can_fund_and_withdraw():
     fund_me = deploy_fund_me()
     print("PING")
     entrance_fee = fund_me.getEntranceFee() + 100
+    print(entrance_fee)
     tx = fund_me.fund({"from": account, "value": entrance_fee})
     tx.wait(1)
     assert fund_me.addressToAmountFunded(account.address) == entrance_fee

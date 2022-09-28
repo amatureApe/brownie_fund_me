@@ -10,7 +10,7 @@ STARTING_PRICE = 200000000000
 def get_account():
     if (
         network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS
-        or network.show_active in FORKED_LOCAL_ENVIRONMETNS
+        or network.show_active() in FORKED_LOCAL_ENVIRONMETNS
     ):
         return accounts[0]
     else:
