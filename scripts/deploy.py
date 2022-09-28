@@ -23,6 +23,7 @@ def deploy_fund_me():
         publish_source=get_verify_status(),
     )
     print(f"Contract deployed to {fund_me.address}")
+    return fund_me
 
 
 def main():
