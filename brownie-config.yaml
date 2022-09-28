@@ -21,6 +21,7 @@ networks:
     verify: False
   ftm-main:
     eth_usd_price_feed: "0x11DdD3d147E5b83D01cee7070027092397d63658"
+    ftm_usd_price_fee: "0xf4766552D15AE4d256Ad41B6cf2933482B0680dc"
     verify: True
 wallets:
   from_key: ${PRIVATE_KEY}

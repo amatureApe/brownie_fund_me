@@ -19,10 +19,10 @@ contract FundMe {
     }
 
     function fund() public payable {
-        uint256 mimimumUSD = 50 * 10**18;
+        uint256 mimimumUSD = 1 * 10**18;
         require(
             getConversionRate(msg.value) >= mimimumUSD,
-            "You need to spend more ETH!"
+            "You need to spend more money!"
         );
         addressToAmountFunded[msg.sender] += msg.value;
         funders.push(msg.sender);
@@ -46,6 +46,14 @@ contract FundMe {
         uint256 ethPrice = getPrice();
         uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1000000000000000000;
         return ethAmountInUsd;
+    }
+
+    function getEntranceFee() public view returns (uint256) {
+        // minimumUSD
+        uint256 minimumUSD = 50 * 10**18;
+        uint256 price = getPrice();
+        uint256 precision = 1 * 10**18;
+        return (minimumUSD * precision) / price;
     }
 
     modifier onlyOwner() {
